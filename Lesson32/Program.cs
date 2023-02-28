@@ -17,15 +17,10 @@ namespace Lesson32
 
         static void Main(string[] args)
         {
-            var tree = new BinTreeCollection<int>();
+            var tree = new BinTreeCollectionWithSumEnumerator();
             while (EnterCollection(tree)) { }
 
             var prev = 0;
-            Console.WriteLine("Collection itself:");
-            foreach(var i in tree)
-            {
-                Console.WriteLine(i);
-            }
             Console.WriteLine("Sum of current and previous:");
             foreach (var item in tree)
             {

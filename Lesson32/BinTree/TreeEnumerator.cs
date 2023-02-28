@@ -5,18 +5,18 @@ namespace Lesson32.BinTree
 {
     public class TreeEnumerator<T> : IEnumerator<T> where T : IComparable<T>
     {
-        private TreeNode<T> _root;
+        private TreeNode<T>? _root;
         private TreeNode<T>? _current;
         private Stack<TreeNode<T>> _stack;
         private bool inited = false;
 
-        public TreeEnumerator(TreeNode<T> root)
+        public TreeEnumerator(TreeNode<T>? root)
         {
             _root = root;
             Reset();
         }
 
-        public T Current => _stack.Peek().Value;
+        public T Current => _stack.TryPeek(out var elem) ? elem.Value : default(T);
 
         object IEnumerator.Current => Current;
 

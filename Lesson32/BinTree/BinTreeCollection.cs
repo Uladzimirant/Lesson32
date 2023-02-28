@@ -118,8 +118,6 @@ namespace Lesson32.BinTree
             return new TreeEnumerator<T>(_root);
         }
 
-
-
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
